@@ -1,0 +1,4 @@
+#!/bin/sh
+. "/_/husky.sh"
+
+pnpm --no -- commitlint --edit ""
