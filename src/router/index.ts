@@ -1,20 +1,20 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import type { App } from "vue";
+import { createRouter, createWebHashHistory } from 'vue-router'
+import type { App } from 'vue'
 
-import routes from "./modules";
+import routes from './modules'
 
 const router = createRouter({
   // vueRouter@3版本的mode改成了history，hash模式配置createWebHashHistory，history模式配置createWebHistory
   history: createWebHashHistory(),
-  routes,
-});
+  routes
+})
 
 /**
  * 路由初始化函数
  * @param app
  */
 export const setupRouter = (app: App<Element>) => {
-  app.use(router);
-};
+  app.use(router)
+}
 
-export default router;
+export default router

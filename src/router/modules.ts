@@ -1,4 +1,4 @@
-import type { RouteRecordRaw } from "vue-router";
+import type { RouteRecordRaw } from 'vue-router'
 
 // 路由规则
 const routes: RouteRecordRaw[] = [
@@ -12,6 +12,6 @@ const routes: RouteRecordRaw[] = [
   //     name: 'login',
   //     component: () => import('@/views/LoginPage.vue')
   //   }
-];
+]
 
-export default routes;
+export default routes
