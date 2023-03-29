@@ -1,4 +1,4 @@
 #!/bin/sh
-. "/_/husky.sh"
+. "$(dirname "$0")/_/husky.sh"
 
-pnpm --no -- commitlint --edit ""
+pnpm exec commitlint --config commitlint.config.cjs --edit "${1}"
