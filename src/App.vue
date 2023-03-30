@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import helloWorld from '@/components/HelloWorld.vue'
+import { ComponentInternalInstance, getCurrentInstance } from 'vue'
+const {
+  appContext: { app }
+} = getCurrentInstance() as ComponentInternalInstance
+app.component('HelloWorld', helloWorld)
 </script>
 
 <template>
