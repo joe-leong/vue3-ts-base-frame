@@ -2,7 +2,6 @@
   "name": "vbase",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -10,7 +9,8 @@
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "lint:style": "stylelint \"./**/*.{css,scss,vue,html}\" --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate": "plop"
   },
   "dependencies": {
     "dayjs": "^1.11.7",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
+    "@ctrlc/vite-plugin-vue-setup-extend": "^1.1.0",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
@@ -31,6 +32,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.10.0",
     "husky": "^8.0.3",
+    "plop": "^3.1.2",
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-html": "^1.5.0",

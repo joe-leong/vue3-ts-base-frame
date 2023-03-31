@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import removeConsole from 'vite-plugin-remove-console'
 import { Plugin as importToCDN } from 'vite-plugin-cdn-import'
 import { visualizer } from 'rollup-plugin-visualizer'
+import vueScriptAttrs from '@ctrlc/vite-plugin-vue-setup-extend'
 const {
   npm_package_dependencies_vue: vueVersion,
   npm_package_dependencies_vue_router: routerVersion,
@@ -29,6 +30,7 @@ export default defineConfig({
     // @ts-ignore
     visualizer(),
     vue(),
+    vueScriptAttrs(),
     removeConsole(),
     importToCDN({
       modules: [
