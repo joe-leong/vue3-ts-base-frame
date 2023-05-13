@@ -5,6 +5,8 @@ import removeConsole from 'vite-plugin-remove-console'
 import { Plugin as importToCDN } from 'vite-plugin-cdn-import'
 import { visualizer } from 'rollup-plugin-visualizer'
 import vueScriptAttrs from '@ctrlc/vite-plugin-vue-setup-extend'
+import Inspect from 'vite-plugin-inspect'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 const {
   npm_package_dependencies_vue: vueVersion,
   npm_package_dependencies_vue_router: routerVersion,
@@ -29,7 +31,9 @@ export default defineConfig({
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     visualizer(),
+    Inspect(),
     vue(),
+    vueJsx(),
     vueScriptAttrs(),
     removeConsole(),
     importToCDN({
@@ -74,6 +78,8 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src'),
       '#': resolve(__dirname, './src/types'),
+      styles: resolve(__dirname, './src/styles'),
+      hooks: resolve(__dirname, './src/hooks'),
       utils: resolve(__dirname, './src/utils'),
       apis: resolve(__dirname, './src/apis')
     }

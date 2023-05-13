@@ -6,12 +6,6 @@ module.exports = {
   prompts: [
     {
       type: 'input',
-      name: 'folder',
-      message: 'page folder please',
-      validate: notEmpty('folder')
-    },
-    {
-      type: 'input',
       name: 'name',
       message: 'page name please',
       validate: notEmpty('name')
@@ -53,13 +47,21 @@ module.exports = {
     return [
       {
         type: 'add',
-        path: `src/views/${data.folder}/${name}.vue`,
+        path: `src/views/${data.name}/${data.name}.vue`,
         templateFile: 'templates/components/index.hbs',
         data: {
           name: name,
           template: data.blocks.includes('template'),
           script: data.blocks.includes('script'),
           style: data.blocks.includes('style')
+        }
+      },
+      {
+        type: 'add',
+        path: `src/views/${data.name}/page.ts`,
+        templateFile: 'templates/components/router.hbs',
+        data: {
+          name: name
         }
       }
     ]

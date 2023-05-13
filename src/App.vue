@@ -1,22 +1,16 @@
 <script setup lang="ts">
-import helloWorld from '@/components/HelloWorld.vue'
+import Test from '@/components/test'
 import { ComponentInternalInstance, getCurrentInstance } from 'vue'
+import { useRouter } from 'vue-router'
 const {
-  appContext: { app }
+  appContext: { app, components }
 } = getCurrentInstance() as ComponentInternalInstance
-app.component('HelloWorld', helloWorld)
+// app.component('HelloWorld', helloWorld)
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />111
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Test></Test>
+  <RouterView></RouterView>
 </template>
 
 <style scoped>

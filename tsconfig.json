@@ -5,6 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
+    "allowJs": true,
     "jsx": "preserve",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -17,8 +18,11 @@
       "@/*": ["./src/*"],
       "#/*": ["src/types/*"],
       "utils/*": ["src/utils/*"],
-      "apis/*": ["src/apis/*"]
-    }
+      "apis/*": ["src/apis/*"],
+      "hooks/*": ["src/hooks/*"],
+      "styles/*": ["src/styles/*"]
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
